@@ -28,7 +28,7 @@ setMessage({ text: `Welcome back, ${fullName}!`, isError: false });
   const handleClockIn = async () => {
     try {
       setMessage({ text: 'Verifying network presence...', isError: false });
-      const response = await fetch('http://localhost:5000/api/attendance/clock-in', {
+      const response = await fetch('https://attachee-attendance-forms.vercel.app/api/attendance/clock-in', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: userEmail }),
@@ -54,7 +54,7 @@ setMessage({ text: `Welcome back, ${fullName}!`, isError: false });
 
   const handleClockOut = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/attendance/clock-out', {
+      const response = await fetch('https://attachee-attendance-forms.vercel.app/api/attendance/clock-out', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: userEmail }),
